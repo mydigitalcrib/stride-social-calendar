@@ -3,9 +3,11 @@
 A shared, read-only view of Michelle's week for her creators:
 **https://mydigitalcrib.github.io/stride-social-calendar/**
 
-It shows only general information: what kind of work is happening (calls, brand outreach, follow-ups…),
-on which day and at what time. Titles, notes, creator names, brands and rates stay in her private workspace
-and are never copied here.
+It shows Michelle's real schedule, with one rule: **calls with a creator never show the creator's name**.
+They appear as "Creator call". A title is hidden when it names a creator from her workspace, names a person in
+brackets ("… (Diana Tejada)"), looks like a one-on-one ("Let's Connect", "call with", "1:1"), or the item is a
+creator/brand item (creator outreach, brand pitches, brand outreach). Notes, niches, statuses and links are never
+copied.
 
 ## Updating it
 

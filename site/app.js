@@ -102,7 +102,10 @@
           const type = TYPES[it.type] || TYPES.task;
           const el = text('div', 'item');
           el.style.setProperty('--type', type.color);
-          el.append(text('b', null, type.label), text('small', null, timeLabel(it)));
+          // The event's own title when it's public, otherwise just the kind of work.
+          const title = typeof it.title === 'string' && it.title.trim() ? it.title.trim() : type.label;
+          el.append(text('b', null, title), text('small', null, timeLabel(it)));
+          el.title = `${title} · ${type.label}`;
           list.append(el);
         });
         day.append(list);
