@@ -48,6 +48,7 @@ check('a big group call that names a creator still hides the name', ptg('Q&A wit
 check('3 people or fewer keep the usual rules', [ptg('Planning sync', 3), ptg("Let's Connect! | Stride Social (Diana Tejada)", 2)], ['Planning sync', 'Creator call']);
 check('other Stride meetings stay public', [pt('Stride Mentorship Call'), pt('Stride Talent optional drop-in')], ['Stride Mentorship Call', 'Stride Talent optional drop-in']);
 check("Let's Connect with a creator → Creator call", pt("Let's Connect! | Stride Social (Diana Tejada)"), 'Creator call');
+check("booking-page hours (Let's Connect, nobody booked) → Open for creator calls", pt("Let's Connect! | Stride Social"), 'Open for creator calls');
 check('a person in brackets → Creator call', pt('Weekly check-in (Maria Lopez)'), 'Creator call');
 check('call with someone → Creator call', pt('Call with Sam'), 'Creator call');
 check('a creator first name anywhere → Creator call', pt('Janella content review'), 'Creator call');
