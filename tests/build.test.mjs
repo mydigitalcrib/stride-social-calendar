@@ -42,6 +42,10 @@ check('UNI study stays public', pt('UNI Studying - Computer Science', 'task'), '
 check('lunch stays public', pt('Lunch / Break 🍎', 'task'), 'Lunch / Break 🍎');
 check('email time stays public', pt('Email and Follow Ups', 'follow-up'), 'Email and Follow Ups');
 check('team meetings show as "Weekly team meeting"', pt('Motherhood and Family Team Meeting'), 'Weekly team meeting');
+const ptg = (title, guests) => publicTitle({ title, type: 'meeting', guests }, names);
+check('meetings with more than 3 people → "Team meeting"', [ptg('Stride Mentorship Call', 130), ptg('Motherhood and Lifestyle Department Catchup', 11), ptg('PAYMENT QUESTIONS drop in session (optional)', 178)], ['Team meeting', 'Team meeting', 'Team meeting']);
+check('a big group call that names a creator still hides the name', ptg('Q&A with Janella', 20), 'Team meeting');
+check('3 people or fewer keep the usual rules', [ptg('Planning sync', 3), ptg("Let's Connect! | Stride Social (Diana Tejada)", 2)], ['Planning sync', 'Creator call']);
 check('other Stride meetings stay public', [pt('Stride Mentorship Call'), pt('Stride Talent optional drop-in')], ['Stride Mentorship Call', 'Stride Talent optional drop-in']);
 check("Let's Connect with a creator → Creator call", pt("Let's Connect! | Stride Social (Diana Tejada)"), 'Creator call');
 check('a person in brackets → Creator call', pt('Weekly check-in (Maria Lopez)'), 'Creator call');

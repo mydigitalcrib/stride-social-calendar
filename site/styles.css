@@ -107,7 +107,73 @@ body {
 }
 
 .intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
   margin-bottom: 24px;
+}
+
+/* My time vs your time */
+.clocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  flex-shrink: 0;
+  width: 360px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--edge), var(--shadow);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  text-shadow: none;
+}
+.clock {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--raised);
+}
+.clock small {
+  color: var(--subtle);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.clock b {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.clock span {
+  color: var(--muted);
+  font-size: 11px;
+}
+.clock:first-child b::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+.clockdiff {
+  grid-column: 1 / -1;
+  margin: 2px 2px 0;
+  color: var(--text-2);
+  font-size: 12px;
 }
 .eyebrow {
   color: var(--subtle);
@@ -319,6 +385,13 @@ h2 {
   }
   h1 {
     font-size: 26px;
+  }
+  .intro {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .clocks {
+    width: auto;
   }
   .weekbar {
     flex-direction: column;

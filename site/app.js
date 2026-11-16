@@ -147,8 +147,47 @@
     render();
   });
 
+  // ---- My time vs your time ----
+  function offsetMinutes(tz, at) {
+    // Minutes ahead of UTC for a time zone at a given moment.
+    const parts = Object.fromEntries(
+      new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
+        .formatToParts(at)
+        .map((p) => [p.type, p.value]),
+    );
+    const asUtc = Date.UTC(+parts.year, +parts.month - 1, +parts.day, +parts.hour % 24, +parts.minute);
+    return Math.round((asUtc - Math.floor(at.getTime() / 60000) * 60000) / 60000);
+  }
+  function placeName(tz) {
+    const city = (tz || '').split('/').pop().replace(/_/g, ' ');
+    return city ? city.toUpperCase() : 'YOUR TIME';
+  }
+  function tickClocks() {
+    const now = new Date();
+    const mine = data.timezone || 'America/Argentina/Buenos_Aires';
+    const yours = Intl.DateTimeFormat().resolvedOptions().timeZone || mine;
+    const time = (tz) => now.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', timeZone: tz });
+    const day = (tz) => now.toLocaleDateString([], { weekday: 'long', day: 'numeric', month: 'short', timeZone: tz });
+    $('clock-mine').textContent = time(mine);
+    $('date-mine').textContent = day(mine);
+    $('clock-yours').textContent = time(yours);
+    $('date-yours').textContent = day(yours);
+    $('label-yours').textContent = `YOUR TIME · ${placeName(yours)}`;
+    const diff = offsetMinutes(yours, now) - offsetMinutes(mine, now);
+    if (diff === 0) {
+      $('clock-diff').textContent = "You're in the same time zone as me.";
+    } else {
+      const h = Math.floor(Math.abs(diff) / 60);
+      const m = Math.abs(diff) % 60;
+      const amount = `${h ? `${h} hour${h === 1 ? '' : 's'}` : ''}${h && m ? ' ' : ''}${m ? `${m} min` : ''}`;
+      $('clock-diff').textContent = `You're ${amount} ${diff > 0 ? 'ahead of' : 'behind'} me. Times on the calendar are mine, with yours in brackets.`;
+    }
+  }
+
   renderLegend();
   render();
+  tickClocks();
+  setInterval(tickClocks, 15000);
   fetch(`calendar.json?v=${Date.now()}`, { cache: 'no-store' })
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
     .then((json) => {

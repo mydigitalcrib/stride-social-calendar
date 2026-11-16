@@ -21,9 +21,24 @@
       </header>
 
       <section class="intro">
-        <div class="eyebrow">STRIDE TALENT / CREATOR CALENDAR</div>
-        <h1>What I'm working on.</h1>
-        <p>A simple view of my week, so you know when I'm on calls, pitching brands or catching up on emails.</p>
+        <div>
+          <div class="eyebrow">STRIDE TALENT / CREATOR CALENDAR</div>
+          <h1>What I'm working on.</h1>
+          <p>A simple view of my week, so you know when I'm on calls, pitching brands or catching up on emails.</p>
+        </div>
+        <aside class="clocks" aria-label="Time now">
+          <div class="clock">
+            <small>MY TIME · BUENOS AIRES</small>
+            <b id="clock-mine">--:--</b>
+            <span id="date-mine"></span>
+          </div>
+          <div class="clock yours">
+            <small id="label-yours">YOUR TIME</small>
+            <b id="clock-yours">--:--</b>
+            <span id="date-yours"></span>
+          </div>
+          <p class="clockdiff" id="clock-diff"></p>
+        </aside>
       </section>
 
       <section class="panel">

@@ -39,6 +39,8 @@ const mentions = (title, names) => {
 export function publicTitle(e, names) {
   const title = String(e.title || '').trim();
   if (!title) return '';
+  // Michelle's rule: any meeting with more than 3 people shows only as a team meeting.
+  if (Number(e.guests) > 3) return /\bteam meeting\b/i.test(title) ? 'Weekly team meeting' : 'Team meeting';
   const linked = e.creatorId || e.creatorName || e.brand || ['creator-outreach', 'brand-pitch', 'brand-outreach'].includes(e.type);
   if (ONE_ON_ONE.test(title) || PERSON_IN_BRACKETS.test(title) || mentions(title, names)) return e.type === 'meeting' ? 'Creator call' : '';
   if (linked) return '';

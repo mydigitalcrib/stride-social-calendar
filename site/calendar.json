@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T19:25:39.755Z",
+  "updatedAt": "2026-11-16T19:32:01.867Z",
   "timezone": "America/Argentina/Buenos_Aires",
   "offset": "-03:00",
   "zoneName": "Buenos Aires",
@@ -58,7 +58,7 @@
       "time": "09:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Stride Talent optional drop-in"
+      "title": "Team meeting"
     },
     {
       "date": "2026-11-17",
@@ -93,7 +93,7 @@
       "time": "11:00",
       "duration": 45,
       "type": "meeting",
-      "title": "Stride Mentorship Call"
+      "title": "Team meeting"
     },
     {
       "date": "2026-11-18",
@@ -114,7 +114,7 @@
       "time": "10:15",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Lifestyle Department Catchup"
+      "title": "Team meeting"
     },
     {
       "date": "2026-11-19",
@@ -128,7 +128,7 @@
       "time": "13:00",
       "duration": 30,
       "type": "meeting",
-      "title": "PAYMENT QUESTIONS drop in session (optional)"
+      "title": "Team meeting"
     },
     {
       "date": "2026-11-20",
@@ -184,7 +184,7 @@
       "time": "09:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Stride Talent optional drop-in"
+      "title": "Team meeting"
     },
     {
       "date": "2026-11-24",
@@ -205,7 +205,7 @@
       "time": "11:00",
       "duration": 45,
       "type": "meeting",
-      "title": "Stride Mentorship Call"
+      "title": "Team meeting"
     },
     {
       "date": "2026-11-25",
@@ -226,7 +226,7 @@
       "time": "10:15",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Lifestyle Department Catchup"
+      "title": "Team meeting"
     },
     {
       "date": "2026-11-26",
@@ -240,7 +240,7 @@
       "time": "13:00",
       "duration": 30,
       "type": "meeting",
-      "title": "CAMPAIGN QUESTIONS drop in session (optional)"
+      "title": "Team meeting"
     },
     {
       "date": "2026-11-27",
@@ -289,7 +289,7 @@
       "time": "09:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Stride Talent optional drop-in"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-01",
@@ -310,7 +310,7 @@
       "time": "11:00",
       "duration": 45,
       "type": "meeting",
-      "title": "Stride Mentorship Call"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-02",
@@ -331,7 +331,7 @@
       "time": "10:15",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Lifestyle Department Catchup"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-03",
@@ -345,7 +345,7 @@
       "time": "13:00",
       "duration": 30,
       "type": "meeting",
-      "title": "PAYMENT QUESTIONS drop in session (optional)"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-04",
@@ -408,7 +408,7 @@
       "time": "09:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Stride Talent optional drop-in"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-08",
@@ -429,7 +429,7 @@
       "time": "11:00",
       "duration": 45,
       "type": "meeting",
-      "title": "Stride Mentorship Call"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-09",
@@ -450,7 +450,7 @@
       "time": "10:15",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Lifestyle Department Catchup"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-10",
@@ -464,7 +464,7 @@
       "time": "13:00",
       "duration": 30,
       "type": "meeting",
-      "title": "CAMPAIGN QUESTIONS drop in session (optional)"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-11",
@@ -513,7 +513,7 @@
       "time": "09:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Stride Talent optional drop-in"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-15",
@@ -534,7 +534,7 @@
       "time": "11:00",
       "duration": 45,
       "type": "meeting",
-      "title": "Stride Mentorship Call"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-16",
@@ -555,7 +555,7 @@
       "time": "10:15",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Lifestyle Department Catchup"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-17",
@@ -569,7 +569,7 @@
       "time": "13:00",
       "duration": 30,
       "type": "meeting",
-      "title": "PAYMENT QUESTIONS drop in session (optional)"
+      "title": "Team meeting"
     },
     {
       "date": "2026-12-18",
