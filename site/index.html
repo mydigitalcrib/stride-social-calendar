@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Michelle's week | Stride Talent</title>
+    <meta name="description" content="What Michelle at Stride Talent is working on this week." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23040404'/%3E%3Crect x='8' y='9' width='16' height='15' rx='3' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M8 14h16' stroke='%23ff3b30' stroke-width='2'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true"></div>
+    <main class="shell">
+      <header class="top">
+        <div class="brand">stride<span>talent</span><i>↗</i></div>
+        <div class="who">
+          <span class="dot"></span>
+          Michelle's week
+        </div>
+      </header>
+
+      <section class="intro">
+        <div class="eyebrow">STRIDE TALENT / CREATOR CALENDAR</div>
+        <h1>What I'm working on.</h1>
+        <p>A simple view of my week, so you know when I'm on calls, pitching brands or catching up on emails.</p>
+      </section>
+
+      <section class="panel">
+        <div class="weekbar">
+          <div class="weeknav">
+            <button type="button" id="prev" aria-label="Previous week">‹</button>
+            <button type="button" id="today">This week</button>
+            <button type="button" id="next" aria-label="Next week">›</button>
+          </div>
+          <h2 id="range" aria-live="polite"></h2>
+        </div>
+        <div class="week" id="week"></div>
+        <div class="legend" id="legend"></div>
+      </section>
+
+      <p class="foot" id="foot"></p>
+    </main>
+    <noscript><p class="foot">Turn on JavaScript to see the calendar.</p></noscript>
+    <script src="app.js"></script>
+  </body>
+</html>

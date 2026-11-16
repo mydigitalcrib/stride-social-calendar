@@ -1,0 +1,10 @@
+{
+  "name": "stride-social-calendar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-calendar": "node scripts/build-calendar.mjs",
+    "test": "node tests/build.test.mjs",
+    "preview": "npx --yes http-server@14.1.1 site -p 4460 -c-1"
+  }
+}

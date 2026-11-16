@@ -1,0 +1,364 @@
+/* Creator calendar, in the same Glass look as the Stride workspace. The Geist font is bundled (fonts/). */
+@font-face {
+  font-family: 'Geist';
+  src: url('fonts/geist.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --page: #040404;
+  --ink: #ffffff;
+  --text-2: #e4e4e6;
+  --muted: #a9a9a9;
+  --subtle: #8a8a8a;
+  --line: rgb(255 255 255 / 0.085);
+  --line-strong: rgb(255 255 255 / 0.15);
+  --surface: rgb(22 22 24 / 0.55);
+  --raised: rgb(255 255 255 / 0.06);
+  --highlight: rgb(255 255 255 / 0.08);
+  --accent: #ff3b30;
+  --edge: inset 0 1px 0 rgb(255 255 255 / 0.07);
+  --shadow: 0 24px 60px -24px rgb(0 0 0 / 0.75);
+  --blur: blur(22px) saturate(150%);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --page: #e9e9eb;
+    --ink: #111111;
+    --text-2: #2a2a2c;
+    --muted: #505052;
+    --subtle: #616163;
+    --line: rgb(0 0 0 / 0.08);
+    --line-strong: rgb(0 0 0 / 0.14);
+    --surface: rgb(255 255 255 / 0.55);
+    --raised: rgb(255 255 255 / 0.62);
+    --highlight: rgb(255 255 255 / 0.75);
+    --edge: inset 0 1px 0 rgb(255 255 255 / 0.85);
+    --shadow: 0 20px 44px -24px rgb(0 0 0 / 0.28);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--page);
+  font: 14px/1.5 'Geist', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 55% at 62% -6%, rgb(255 255 255 / 0.18), transparent 70%),
+    linear-gradient(104deg, transparent 40%, rgb(255 255 255 / 0.06) 50%, transparent 62%),
+    radial-gradient(120% 90% at 50% 40%, transparent 55%, rgb(0 0 0 / 0.5));
+}
+@media (prefers-color-scheme: light) {
+  .backdrop {
+    background:
+      radial-gradient(60% 55% at 62% -6%, rgb(255 255 255 / 0.9), transparent 70%),
+      radial-gradient(120% 90% at 50% 40%, transparent 55%, rgb(0 0 0 / 0.06));
+  }
+}
+
+.shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 28px 40px;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.brand {
+  position: relative;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1.3px;
+  line-height: 1;
+}
+.brand span {
+  display: block;
+  margin-top: 6px;
+  color: var(--subtle);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 4.4px;
+  text-transform: uppercase;
+}
+.brand i {
+  position: absolute;
+  top: -6px;
+  left: 76px;
+  color: var(--accent);
+  font-style: normal;
+  font-size: 21px;
+}
+.who {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--raised);
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.intro {
+  margin-bottom: 24px;
+}
+.eyebrow {
+  color: var(--subtle);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  margin-bottom: 12px;
+}
+h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -1.3px;
+  line-height: 1.2;
+}
+.intro p {
+  margin: 10px 0 0;
+  max-width: 560px;
+  color: var(--muted);
+}
+
+.panel {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--edge), var(--shadow);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+}
+.weekbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.weeknav {
+  display: flex;
+  gap: 6px;
+}
+button {
+  font: inherit;
+  color: var(--ink);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+button:hover {
+  background: var(--highlight);
+  border-color: var(--line-strong);
+}
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+#prev,
+#next {
+  width: 34px;
+  padding: 7px 0;
+  font-size: 16px;
+  line-height: 1;
+}
+h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.week {
+  display: grid;
+  grid-template-columns: repeat(var(--days, 5), minmax(0, 1fr));
+  gap: 10px;
+}
+.day {
+  min-height: 260px;
+  padding: 12px 9px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--raised);
+  box-shadow: var(--edge);
+}
+.day.today {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  background: color-mix(in srgb, var(--accent) 6%, var(--raised));
+}
+.dayhead {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.dayhead small {
+  display: block;
+  color: var(--subtle);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+.dayhead b {
+  display: inline-grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  margin-top: 6px;
+  border-radius: 50%;
+  font-size: 17px;
+}
+.day.today .dayhead b {
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.focus {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 8px auto 0;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: var(--text-2);
+  background: var(--highlight);
+  border: 1px solid var(--line);
+  font-size: 10px;
+  text-align: center;
+}
+.focus.nocalls {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}
+.items {
+  display: grid;
+  gap: 6px;
+}
+.item {
+  display: grid;
+  gap: 2px;
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--type);
+  border-radius: 9px;
+  background: var(--surface);
+  font-size: 12px;
+}
+.item b {
+  font-weight: 600;
+}
+.item small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.empty {
+  margin-top: 8px;
+  color: var(--subtle);
+  text-align: center;
+  font-size: 11px;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--type);
+}
+.foot {
+  margin: 18px 4px 0;
+  color: var(--subtle);
+  font-size: 11px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .intro,
+  .panel {
+    animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  }
+  .panel {
+    animation-delay: 0.1s;
+  }
+  .day {
+    animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+    animation-delay: calc(0.15s + var(--i, 0) * 0.04s);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 800px) {
+  .shell {
+    padding: 16px 16px 32px;
+  }
+  .top {
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  .weekbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .week {
+    grid-template-columns: 1fr;
+  }
+  .day {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+  .dayhead {
+    margin: 0;
+  }
+  .empty {
+    margin-top: 0;
+    text-align: left;
+    align-self: center;
+  }
+}
