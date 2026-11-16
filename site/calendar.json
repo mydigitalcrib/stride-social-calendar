@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T19:22:28.169Z",
+  "updatedAt": "2026-11-16T19:25:39.755Z",
   "timezone": "America/Argentina/Buenos_Aires",
   "offset": "-03:00",
   "zoneName": "Buenos Aires",
@@ -23,7 +23,7 @@
       "time": "07:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Family Team Meeting"
+      "title": "Weekly team meeting"
     },
     {
       "date": "2026-11-16",
@@ -163,7 +163,7 @@
       "time": "07:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Family Team Meeting"
+      "title": "Weekly team meeting"
     },
     {
       "date": "2026-11-23",
@@ -268,7 +268,7 @@
       "time": "07:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Family Team Meeting"
+      "title": "Weekly team meeting"
     },
     {
       "date": "2026-11-30",
@@ -380,7 +380,7 @@
       "time": "07:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Family Team Meeting"
+      "title": "Weekly team meeting"
     },
     {
       "date": "2026-12-07",
@@ -492,7 +492,7 @@
       "time": "07:00",
       "duration": 30,
       "type": "meeting",
-      "title": "Motherhood and Family Team Meeting"
+      "title": "Weekly team meeting"
     },
     {
       "date": "2026-12-14",

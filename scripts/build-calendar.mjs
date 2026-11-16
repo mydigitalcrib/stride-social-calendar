@@ -42,6 +42,8 @@ export function publicTitle(e, names) {
   const linked = e.creatorId || e.creatorName || e.brand || ['creator-outreach', 'brand-pitch', 'brand-outreach'].includes(e.type);
   if (ONE_ON_ONE.test(title) || PERSON_IN_BRACKETS.test(title) || mentions(title, names)) return e.type === 'meeting' ? 'Creator call' : '';
   if (linked) return '';
+  // Michelle's preferred public names (her own calendar keeps the full title).
+  if (/\bteam meeting\b/i.test(title)) return 'Weekly team meeting';
   return title.slice(0, 80);
 }
 
