@@ -350,6 +350,46 @@ h2 {
   border-radius: 2px;
   background: var(--type);
 }
+/* "Want to book a call?" link to Michelle's Google booking page */
+.book {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 10px 10px 10px 18px;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--edge), var(--shadow);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  font-size: 14px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.book b {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  color: #0a0a0a;
+  background: #f5f5f5;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.book i {
+  color: var(--accent);
+  font-style: normal;
+}
+.book:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line-strong));
+}
+.book:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 .foot {
   margin: 18px 4px 0;
   color: var(--subtle);
