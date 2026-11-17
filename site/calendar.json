@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T19:58:49.022Z",
+  "updatedAt": "2026-11-17T17:15:37.442Z",
   "timezone": "America/Argentina/Buenos_Aires",
   "offset": "-03:00",
   "zoneName": "Buenos Aires",
@@ -62,13 +62,6 @@
     },
     {
       "date": "2026-11-17",
-      "time": "11:00",
-      "duration": 30,
-      "type": "meeting",
-      "title": "Creator call"
-    },
-    {
-      "date": "2026-11-17",
       "time": "12:00",
       "duration": 120,
       "type": "task",
@@ -76,17 +69,17 @@
     },
     {
       "date": "2026-11-17",
-      "time": "12:00",
-      "duration": 30,
-      "type": "meeting",
-      "title": "Creator call"
-    },
-    {
-      "date": "2026-11-17",
       "time": "14:00",
       "duration": 360,
       "type": "meeting",
       "title": "Open for creator calls"
+    },
+    {
+      "date": "2026-11-17",
+      "time": "14:00",
+      "duration": 120,
+      "type": "task",
+      "title": "UNI Studying - Computer Science"
     },
     {
       "date": "2026-11-18",
@@ -122,6 +115,13 @@
       "duration": 90,
       "type": "brand-pitch",
       "title": ""
+    },
+    {
+      "date": "2026-11-18",
+      "time": "14:00",
+      "duration": 30,
+      "type": "meeting",
+      "title": "Creator call"
     },
     {
       "date": "2026-11-19",
